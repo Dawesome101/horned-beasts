@@ -1,4 +1,11 @@
-# Getting Started with Create React App
+# Horned Beasts
+
+This is a projects designed to introduce a new developer to React.  The project specifically is used to display and vote on a users favorite horned beasts.
+
+Author: Daniel Awesome
+Date: 08/15/2022
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
