@@ -3,9 +3,9 @@ import React from "react";
 class HornedBeast extends React.Component {
   
   constructor(props){
-    super(props);
+    super(props)
     
-    this.state = { count: 0 };
+    this.state = { count: 0 }
   }
 
   increment = (e) => {
