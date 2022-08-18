@@ -1,11 +1,11 @@
 import React from "react";
-import HornedBeast from './HornedBeast.js'
-import data from './data.json'
+import HornedBeast from '../component/HornedBeast.js'
+import data from '../json/data.json'
+import "../css/Main.css"
 
 class Main extends React.Component {
 
   render() {
-
     return (
       <main className='main'> {
           data.map((v) => {
@@ -20,7 +20,6 @@ class Main extends React.Component {
         }
       </main>
     )
-
   }
 }
 
