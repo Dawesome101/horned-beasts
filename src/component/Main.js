@@ -2,11 +2,11 @@ import React from "react";
 import "../css/Main.css"
 import HornedBeast from '../component/HornedBeast.js'
 
-
 class Main extends React.Component {
 
   render() {
     return (
+
       <main className='main'> {
         this.props.beasts.map((v, idx) => {
             return <HornedBeast 

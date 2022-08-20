@@ -6,6 +6,7 @@ import Footer from '../component/Footer.js';
 import SelectedBeast from '../component/SelectedBeast.js';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
+import Form from 'react-bootstrap/Form';
 import data from '../json/data.json'
 
 
@@ -17,7 +18,7 @@ class App extends React.Component {
     this.state = {
       beasts: data,
       selectedBeast: {},
-      showModal: false
+      showModal: false,
     }
   }
 
@@ -27,16 +28,53 @@ class App extends React.Component {
   };
 
   handleCloseModal = () => {
-    console.log('Handle close');
     this.setState({ showModal: false });
+  };
+
+  getHornCount = () => {
+    let tempArray = ['All Beasts'];
+    data.forEach((v) => {
+      if(!tempArray.includes(v.horns)){
+        tempArray.push(v.horns);
+      }
+    })
+    return tempArray;
+  }
+
+  getBeasts = (event) => {
+    let tempArray = [];
+    data.forEach((v) => {
+      if(v.horns === +event.target.value){
+        tempArray.push(v);
+      }
+    })
+
+    if(tempArray.length === 0){
+      this.setState({beasts: data});
+    } else {
+      this.setState({beasts: tempArray})
+    }
   };
 
   render(){
     return (
-      <div className="app">
+      <div className="app"> 
         <Container fluid>
-          <Row>
+          <Row id='form-row'>
             <Header />
+            <form id='horn-form'>
+                <Form.Select id='form-select' defaultValue='Filter Horned Beasts' aria-label="Default select example" onChange={this.getBeasts}>
+                  <option disabled>Filter Horned Beasts</option>
+                  {
+                    this.getHornCount().map ((v, i) => {
+                      return <option 
+                        key={i}
+                        value={v}>{`Horns: ${v.toString()}`}
+                      </option>
+                    })
+                  }
+                </Form.Select>
+            </form>
           </Row>
           <Row>
             <Main 

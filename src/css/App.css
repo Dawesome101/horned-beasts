@@ -1,9 +1,10 @@
 .app {
   text-align: center;
+  background-color: #cbbf7a;
 }
 
-.App-header {
-  background-color: #282c34;
+/* .App-header {
+  background-color: #cbbf7a;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -11,4 +12,22 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+
+} */
+
+#form-row{
+  border: solid black 2px;
+  justify-content: center;
+}
+
+#horn-form{
+  width: fit-content;
+  margin: 0.5em 0 1em 0;
+
+}
+
+#form-select{
+  background-color: #9f956c;
+  border: solid 2px #584d3d;
+  font-weight: bolder;
 }

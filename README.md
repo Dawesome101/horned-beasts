@@ -46,3 +46,9 @@ Start time: 1:33
 Finish time: 5:24
 
 Actual time needed to complete: I spent a large ammount of this time helping others get their pages rolling or helping with the code challenges. So inreality about **2.5 hours** of it was actual development.
+
+## Forms and Filters
+
+Given that a user is presented with filtering options
+When the user clicks on one option
+Then the images should be filtered accordingly

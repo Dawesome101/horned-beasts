@@ -2,6 +2,7 @@ import React from "react";
 import "../css/HornedBeast.css"
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+// import Form from 'react-bootstrap/Form';
 
 class HornedBeast extends React.Component {
 
@@ -9,7 +10,7 @@ class HornedBeast extends React.Component {
     super(props)
 
     this.state = { 
-      count: 0
+      count: 0,
     }
   }
 
@@ -19,27 +20,31 @@ class HornedBeast extends React.Component {
 
   render() {
     return (
-      <section className="horned-beasts">
-        <Card className="text-center" style={{ width: '18rem' }}>
-          <Card.Img 
-            variant="top" 
-            onClick={() => this.props.handleOpenModal(this.props.imgTitle)}
-            id={this.props.id}
-            horns={this.props.horns}
-            src={this.props.imageURL}
-            title={this.props.imgTitle} 
-            alt={this.props.description}
-          />
-          <Card.Body>
-            <Card.Title>{this.props.title}</Card.Title>
-            <Card.Text>
-              {this.props.description}
-            </Card.Text>
-            <Button variant="dark" onClick={this.increment}>Click to Vote</Button>
-          </Card.Body>
-          <Card.Footer className="text-muted">Votes: {this.state.count} </Card.Footer>
-        </Card>
-      </section>
+      <div>
+
+
+        <section className="horned-beasts">
+          <Card className="text-center" style={{ width: '18rem' }}>
+            <Card.Img 
+              variant="top" 
+              onClick={() => this.props.handleOpenModal(this.props.imgTitle)}
+              id={this.props.id}
+              horns={this.props.horns}
+              src={this.props.imageURL}
+              title={this.props.imgTitle} 
+              alt={this.props.description}
+            />
+            <Card.Body>
+              <Card.Title>{this.props.title}</Card.Title>
+              <Card.Text>
+                {this.props.description}
+              </Card.Text>
+              <Button variant="dark" onClick={this.increment}>Click to Vote</Button>
+            </Card.Body>
+            <Card.Footer className="text-muted">Votes: {this.state.count} </Card.Footer>
+          </Card>
+        </section>
+      </div>
     )
   }
 }
