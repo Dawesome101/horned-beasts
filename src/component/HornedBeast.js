@@ -2,27 +2,11 @@ import React from "react";
 import "../css/HornedBeast.css"
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-// import Form from 'react-bootstrap/Form';
 
 class HornedBeast extends React.Component {
-
-  constructor(props) {
-    super(props)
-
-    this.state = { 
-      count: 0,
-    }
-  }
-
-  increment = (event) => {
-    this.setState({ count: this.state.count + 1 });
-  }
-
   render() {
     return (
       <div>
-
-
         <section className="horned-beasts">
           <Card className="text-center" style={{ width: '18rem' }}>
             <Card.Img 
@@ -39,9 +23,9 @@ class HornedBeast extends React.Component {
               <Card.Text>
                 {this.props.description}
               </Card.Text>
-              <Button variant="dark" onClick={this.increment}>Click to Vote</Button>
+              <Button variant="dark" onClick={() => this.props.updateBeastCount(this.props.id)}>Click to Vote</Button>
             </Card.Body>
-            <Card.Footer className="text-muted">Votes: {this.state.count} </Card.Footer>
+            <Card.Footer className="text-muted">Votes: {this.props.beastVoteCount[this.props.id-1].beastCount}</Card.Footer>
           </Card>
         </section>
       </div>
