@@ -6,7 +6,6 @@ class Main extends React.Component {
 
   render() {
     return (
-
       <main className='main'> {
         this.props.beasts.map((v, idx) => {
             return <HornedBeast 
@@ -19,6 +18,8 @@ class Main extends React.Component {
               description={v.description}
               handleOpenModal={this.props.handleOpenModal}
               theSelectedBeast={this.props.theSelectedBeast}
+              updateBeastCount={this.props.updateBeastCount}
+              beastVoteCount={this.props.beastVoteCount}
             />;
           })
         }
